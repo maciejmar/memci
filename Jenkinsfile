@@ -23,7 +23,7 @@ pipeline {
     stage('Push to Heroku registry') {
       steps {
         sh '''
-          docker pull maciejmar/memci registry.heroku.com/$APP_NAME/web
+          docker pull maciejmar/memci:latest registry.heroku.com/$APP_NAME/web
           docker tag maciejmar/memci:latest registry.heroku.com/$APP_NAME/web
           docker push registry.heroku.com/$APP_NAME/web
         '''
